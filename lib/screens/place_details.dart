@@ -14,7 +14,7 @@ class PlaceDetailsScreen extends StatelessWidget {
     final lat = place.location.latitude;
     final lng = place.location.longitude;
     // Using Google static maps API to get snapshot of maps and location
-    return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C$lat,$lng&key=AIzaSyDKUg_PJ2tpSfu-KRFkpt22D_vELR6mNYY';
+    return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C$lat,$lng&key=YOUR_GOOGLE_API_KEY';
   }
 
   @override

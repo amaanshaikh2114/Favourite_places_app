@@ -31,14 +31,14 @@ class _LocationInputState extends State<LocationInput> {
     final lat = _pickedLocation!.latitude;
     final lng = _pickedLocation!.longitude;
     // Using Google static maps API to get snapshot of maps and location
-    return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C$lat,$lng&key=AIzaSyDKUg_PJ2tpSfu-KRFkpt22D_vELR6mNYY';
+    return 'https://maps.googleapis.com/maps/api/staticmap?center=$lat,$lng&zoom=16&size=600x300&maptype=roadmap&markers=color:red%7Clabel:A%7C$lat,$lng&key=YOUR_GOOGLE_API_KEY';
   }
 
   Future<void> _savPlace(double latitude, double longitude) async {
     // parse() is used to take the whole url unlike https() which only takes the domain name onwards url after https://
     // Using Google Geoencoding API to convert latitude and longitude to addresses and vice versa
     final url = Uri.parse(
-        'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=AIzaSyDKUg_PJ2tpSfu-KRFkpt22D_vELR6mNYY');
+        'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&key=YOUR_GOOGLE_API_KEY');
     // Getting response from above url using http.get()
     final response = await http.get(url);
     // Converting json object to map
