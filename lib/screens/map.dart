@@ -1,6 +1,7 @@
-import 'package:favourite_places_app/models/place.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'package:favourite_places_app/models/place.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({
@@ -43,6 +44,7 @@ class _MapScreenState extends State<MapScreen> {
               label: Text('Save'),
             ),
         ],
+        backgroundColor: Theme.of(context).colorScheme.onPrimary,
       ),
       body: GoogleMap(
         onTap: !widget.isSelecting

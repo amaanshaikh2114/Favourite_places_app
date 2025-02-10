@@ -81,7 +81,19 @@ class UserPlacesNotifier extends StateNotifier<List<Place>> {
         'address': newPlace.location.address,
       },
     );
-    state = [newPlace, ...state];
+    state = [...state, newPlace];
+  }
+
+  void deletePlace(Place place) async {
+    final db = await _getDatabase();
+
+    await db.delete(
+      'user_places',
+      where: 'id = ?',
+      whereArgs: [place.id],
+    );
+
+    state = state.where((p) => (p.id != place.id)).toList();
   }
 }
 
